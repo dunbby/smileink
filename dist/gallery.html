@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/main.css">
+
+  <title>Smile Ink</title>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <canvas id='world'></canvas>
+    <div class="container">
+      <nav id="main-nav">
+        <a href="index.html"><img src="./img/logo-w.svg" alt="Smile Ink" id="logo"></a>
+
+        <div class="nav">
+          <ul class="socials-nav">
+            <li><a href="http://facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="http://instagram.com" target="_blank">Instagram</a></li>
+          </ul>
+  
+          <!-- Hamburger Menu -->
+          <div class="menu-wrap">
+            <input type="checkbox" class="toggler">
+            <div class="hamburger">
+                <div>
+                </div>
+            </div>
+            <div class="menu">
+                <div>
+                    <div>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+      
+    <div class="header-content" id="header-content">
+      <h1>Tattoo<br><span>& Custom shoes</span></h1>
+      <div class="container">
+        <div class="headings my-2">
+          <div>
+            <h2>Expert tattoos<br>& Shoe design</h2>
+            <div class="cta">
+              <a href="#home-c">Schedule an appointment</a>
+              <div class="bottom-line"></div>
+            </div>
+            
+          </div>
+          <div class="cta">
+            <h2><a href="gallery.html">My work</a></h2>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </header>
+
+  <!-- Gallery -->
+  <div class="gallery-container container">
+    <div class="section-title">
+      <h2>Gallery</h2>
+    </div>
+    <div class="main">
+      <div class="gallery">
+          <div id="instafeed-container" class="images"></div>
+      </div> 	
+    </div>
+  </div>  
+  
+
+  <div class="divider"></div>
+
+  <!-- Section C: Contact -->
+  <section id="home-c" class="py-3">
+    <div class="container contacts">
+      <div class="section-title">
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-icons">
+        <div class="contact-item">
+          <div class="icon">
+            <i class="fa fa-phone-alt"></i>
+          </div>
+          <div class="ci-title"><h4>Call me</h4></div>
+          <div class="ci-text"><p>+359 898 88 8888</p> </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon ci-icon">
+            <i class="fa fa-map-marker-alt"></i>
+          </div>
+          <div class="ci-title"><h4>Address</h4></div>
+          <div class="ci-text"><p>Maria Luisa 5 str, Varna</p> </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">
+            <i class="fa fa-envelope"></i>
+          </div>
+          <div class="ci-title"><h4>Email</h4></div>
+          <div class="ci-text"><p>emo@smileink.com</p> </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section C: Google map -->
+  <section id="home-d">
+    <div class="google-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5333.629439244373!2d27.909192354157447!3d43.20566905901795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a453f523625ddb%3A0xa84624dbe214e3f1!2z0LHRg9C7LiDigJ7QmtC90Y_Qs9C40L3RjyDQnNCw0YDQuNGPINCb0YPQuNC30LDigJwgNSwgOTAwMCDQktCw0YDQvdCwINCm0LXQvdGC0YrRgCwg0JLQsNGA0L3QsA!5e0!3m2!1sbg!2sbg!4v1633939025471!5m2!1sbg!2sbg" width="600" height="450" style="border:0;" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
+      <div class="map-section" id="map-section">
+        <div class="map-toggle">
+          <div class="icon-map" id="map-icon">
+            <i class="fa fa-map-marker-alt"></i>
+          </div>
+          <div class="map-text">
+            <div class="map-open" id="map-open">
+              Open the map <i class="fa fa-angle-down"></i>
+            </div>
+            <div class="map-close" id="map-close">
+              Close the map <i class="fa fa-angle-up"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section D: Socials -->
+  <section id="home-e">
+    <div class="container socials-container">
+      <div class="logo-big">
+        <a href="#"><img src="./img/logo.svg" alt="Smile Ink"></a>
+      </div>
+      <div class="socials">
+        <div class="icon-socials">
+          <a href="http://facebook.com" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+        <div class="icon-socials">
+          <a href="http://instagram.com" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider divider-footer"></div>
+
+ 
+  
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-text">
+        <p>Copyright  &copy; 2021 Smile Ink Tattoo & Custom shoes - All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- jQuery script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Header script -->
+  <script src="./js/header.js" type="text/javascript"></script>
+
+   <!-- Instagram gallery scripts -->
+   <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js" type="text/javascript"></script>
+   <script src="./js/insta.js" type="text/javascript"></script>
+
+  <!-- Cards script -->
+  <script src="./js/cards.js" type="text/javascript"></script>
+
+  <!-- Trail script -->
+  <script src="./js/trail.js" type="text/javascript"></script>
+  
+  <!-- Toggle map script -->
+  <script src="./js/map-toggle.js" type="text/javascript"></script>
+</body>
+</html>

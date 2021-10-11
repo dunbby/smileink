@@ -1,0 +1,153 @@
+$letters: 8;
+$cubic-slow: cubic-bezier(0.7, 0.01, 0.37, 1);
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-content: center;
+}
+
+.roll-up {
+  overflow: hidden;
+  position: relative;
+  color: $light;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+
+  > span {
+    display: inline-block;
+    position: relative;
+    @for $i from 1 through $letters {
+      &:nth-child(#{$i}) {
+        transition-delay: #{$i * 0.03}s;
+      }
+    }
+    > span {
+      display: inline-block;
+      transition: 0.6s $cubic-slow;
+      transition-delay: inherit;
+      &:nth-child(1) {
+        position: relative;
+      }
+      &:nth-child(2) {
+        position: absolute;
+        transform: translateY(100%);
+        left: 0;
+        color: $primary;
+      }
+    }
+  }
+}
+
+.text-reveal {
+  position: relative;
+  overflow: hidden;
+  color: $medium;
+  font-family: "Lato", sans-serif;
+  span {
+    display: block;
+    transition: $cubic-slow 0.6s;
+  }
+  > span {
+    &:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      > span {
+        overflow: hidden;
+        transform: translateX(-100%);
+        @for $i from 1 through $letters {
+          &:nth-child(#{$i}) {
+            transition-delay: #{$i * 0.1}s;
+          }
+        }
+        > span {
+          transform: translateX(100%);
+          transition-delay: inherit;
+        }
+      }
+    }
+  }
+}
+
+.card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 370px;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+  background-size: cover;
+  cursor: pointer;
+  margin: 0 100px 60px 0;
+  &:before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.75) 100%
+    );
+  }
+  .card__content {
+    z-index: 1;
+    .card__content--description {
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      margin-right: -80px;
+      text-align: left;
+      max-width: 175px;
+    }
+  }
+  &:hover {
+    // text roll
+    .roll-up {
+      > span {
+        > span {
+          &:nth-child(1) {
+            transform: translateY(-100%);
+          }
+          &:nth-child(2) {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+    // paragraph reveal
+    .text-reveal {
+      > span:nth-child(2) > span,
+      > span:nth-child(2) > span > span {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &:first-child {
+    background-image: url("../img/custom_shoes.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+  &:nth-child(2) {
+    background-image: url("../img/color_tattoo.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+  &:last-child {
+    background-image: url("../img/cover_up.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+}

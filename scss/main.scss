@@ -1,0 +1,478 @@
+@import "config";
+@import "utilities";
+@import "menu";
+@import "cards";
+@import "gallery";
+@import "media";
+
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400&family=Lato:wght@100;300;400;700&family=Poppins:wght@100;300;400;700&display=swap");
+
+// General styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background: #000;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+  font-family: "Dosis", sans-serif;
+}
+
+h3 {
+  font-size: 1.7rem;
+  font-weight: 200;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  color: #fff;
+}
+
+img {
+  width: 100%;
+}
+
+// Logo
+#logo {
+  width: 90px;
+
+  &:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+
+    /* When the animation is finished, start again */
+    animation-iteration-count: 0.1s;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+      transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+    }
+  }
+}
+
+// Main Nav
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  .logo {
+    display: block;
+  }
+
+  // top: 0;
+  // overflow: hidden;
+  // z-index: 9999;
+  // width: $website-width;
+  // background-color: transparent;
+  // transition: all 0.2s ease-in-out;
+
+  // &.scrolled {
+  //   background: rgba(0, 0, 0, 0.8);
+  //   transition: padding-top 0.5s, padding-bottom 0.5s;
+  //   padding: 0.7rem 0;
+  // }
+
+  .nav {
+    display: flex;
+
+    ul.socials-nav {
+      display: flex;
+      margin-right: 4rem;
+    }
+
+    li {
+      padding: 1rem 0.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+      font-size: 0.9rem;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+// Header
+#header {
+  background: $bg-image no-repeat center center / cover;
+  color: #fff;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  overflow: hidden;
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to top, #000, transparent);
+    z-index: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    mix-blend-mode: color;
+  }
+
+  .header-content {
+    text-transform: uppercase;
+    padding-top: 10%;
+
+    h1 {
+      margin: 0 auto 0 -3rem;
+      max-width: 120vw;
+      font-size: 11vw;
+      font-family: "Poppins", sans-serif;
+      -webkit-text-stroke: 1px white;
+      -webkit-text-fill-color: transparent;
+      overflow: hidden;
+      white-space: nowrap;
+      line-height: 14rem;
+      position: relative;
+
+      span {
+        margin-left: 7rem;
+      }
+    }
+
+    .headings {
+      display: flex;
+      justify-content: space-between;
+
+      h2 {
+        line-height: 1.2;
+        padding-bottom: 1.5rem;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .cta {
+        transition: opacity 0.2s ease;
+      }
+      .cta:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+// Section A: My works
+#home {
+  &-a {
+    a {
+      font-family: "Dosis", sans-serif;
+      font-size: 1.3rem;
+      text-align: center;
+      display: block;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &-b {
+    .lead {
+      padding-top: 1rem;
+      color: $light;
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 3rem;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1.5rem;
+      text-align: center;
+      margin-bottom: 5rem;
+
+      i {
+        border: 1px $light solid;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        line-height: 120px;
+      }
+
+      // Icon
+      &-icon {
+        color: $light;
+        padding: 0;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        position: relative;
+      }
+    }
+  }
+
+  &-c {
+    background-color: $light;
+    h2 {
+      color: #000;
+    }
+    height: 32rem;
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-areas:
+        "icon title"
+        "icon text";
+      position: relative;
+
+      .ci-icon {
+        grid-area: icon;
+      }
+
+      .ci-title {
+        grid-area: title;
+        margin-left: 3rem;
+        h4 {
+          margin-bottom: 1px;
+          color: $dark;
+          font-size: 0.7rem;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 0.3rem;
+        }
+      }
+
+      .ci-text {
+        grid-area: text;
+        margin-left: 3rem;
+        p {
+          color: $dark;
+          font-size: 0.9rem;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  &-d {
+    .google-map {
+      position: relative;
+      background: #111;
+
+      iframe {
+        display: block;
+        width: 100%;
+        height: 410px;
+        position: relative;
+        background-color: #111 !important;
+        z-index: 1;
+      }
+
+      .map-section {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0 !important;
+        background: rgba(17, 17, 17, 0.93);
+        z-index: 2;
+        cursor: pointer;
+        transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+
+        .map-toggle {
+          width: 200px;
+          height: 100px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin: -50px 0 0 -100px;
+          color: #fff;
+          text-align: center;
+
+          .icon-map {
+            width: 27px;
+            height: 27px;
+            line-height: 27px;
+            margin: 6px auto 25px;
+            position: relative;
+            transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+          }
+
+          .map-text {
+            margin-left: 12px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-family: "Dosis", sans-serif;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.75);
+
+            .map-open {
+              display: block;
+            }
+            .map-close {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .map-section:hover {
+        background: rgba(17, 17, 17, 0.9);
+      }
+
+      .map-section.js-active {
+        height: 25px;
+        background: rgba(17, 17, 17, 0.75);
+
+        .map-toggle {
+          .icon-map {
+            display: none;
+          }
+          .map-text {
+            .map-open {
+              display: none;
+            }
+            .map-close {
+              margin-top: 38px;
+              display: block;
+            }
+          }
+        }
+      }
+
+      .map-section.js-active:hover {
+        background: rgba(17, 17, 17, 0.9);
+      }
+    }
+  }
+
+  &-e {
+    background: $light;
+    padding: 6rem 1rem;
+
+    .socials-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .logo-big {
+        img {
+          width: 300px;
+        }
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// Footer
+#footer {
+  background: $light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .footer-text {
+    padding: 1rem;
+    p {
+      font-family: "Dosis", sans-serif;
+      letter-spacing: 0.2rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #000;
+    }
+  }
+}
