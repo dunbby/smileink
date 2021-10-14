@@ -10,7 +10,7 @@
 	height: auto;
 	margin: 1em;
 	opacity: 1;
-	transition: all 0.3s ease-in;
+	transition: all .3s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 .grid-item:hover img {
