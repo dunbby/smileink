@@ -12,13 +12,13 @@
 
 
 @media only screen and (max-width: 768px) {
-	.container {
+	.container-gallery {
 		column-count: 3;
 	}
 }
 
 @media only screen and (max-width: 450px) {
-	.container {
+	.container-gallery {
 		column-count: 2;
 	}
 }
