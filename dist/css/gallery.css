@@ -22,7 +22,7 @@
 }
 
 .fadeIn {
-    animation: animat_show 1s;
+    animation: animat_show 1.5s;
     visibility: visible !important;
 }
 
