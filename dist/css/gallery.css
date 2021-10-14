@@ -11,6 +11,7 @@
 }
 
 .grid-item img {
+	width: 100%;
 	height: auto;
 	margin: 1em;
 	opacity: 1;
