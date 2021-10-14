@@ -1,87 +1,48 @@
-/* Instagram Gallery styling */
-.main {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 1rem 1rem;
-}
+.container-gallery {
+  /* 	width: 80%; */
+  column-count: 4;
+  margin: 0 auto;
+  padding-bottom: 5rem;
 
-.main .gallery .images {
-  position: relative;
-  height: auto;
-  width: 60%;
-  margin: auto;
-  padding: 45px 0;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 2vh;
-  grid-auto-flow: dense;
-}
+  .gallery-image {
+    visibility: hidden;
+  }
 
-.main .gallery .images a {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.9);
-  border-radius: 2px;
-}
+  .grid-item img {
+    width: 100%;
+    height: auto;
+    margin: 1rem;
+    opacity: 1;
+    transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+  }
 
-.main .gallery .images a:first-child {
-  grid-column-start: span 2;
-  grid-row-start: span 2;
-}
+  .fadeIn {
+    animation: animat_show 1.5s;
+    visibility: visible !important;
+  }
 
-.main .gallery .images a:nth-child(2n + 3) {
-  grid-row-start: span 2;
-}
+  @keyframes animat_show {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
-.main .gallery .images a:nth-child(4n + 5) {
-  grid-column-start: span 2;
-  grid-row-start: span 2;
-}
-
-.main .gallery .images a:nth-child(6n + 7) {
-  grid-row-start: span 1;
-}
-
-.main .gallery .images a:nth-child(8n + 9) {
-  grid-column-start: span 1;
-  grid-row-start: span 1;
-}
-
-.main .gallery .images a img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: 0.3s ease-in-out;
-}
-
-.main .gallery .images a:hover img {
-  opacity: 0.9;
+  .grid-item:hover img {
+    opacity: 0.65;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-  .main .gallery .images {
-    display: grid;
-    grid-template-columns: auto auto auto;
+  .container-gallery {
+    column-count: 3;
   }
 }
 
-@media only screen and (max-width: 430px) {
-  .main .gallery .images {
-    display: block;
-  }
-
-  .main .gallery .images a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin: 2% 0;
-  }
-
-  .main .gallery .images a img {
-    display: block;
-    filter: brightness(1) grayscale(0);
+@media only screen and (max-width: 450px) {
+  .container-gallery {
+    column-count: 2;
   }
 }
