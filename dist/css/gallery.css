@@ -1,5 +1,5 @@
 .container-gallery {
-	width: 80%;
+/* 	width: 80%; */
 	column-count: 4;
 	margin: 0 auto;
 }
