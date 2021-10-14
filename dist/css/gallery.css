@@ -4,18 +4,22 @@
 	margin: 0 auto;	
 }
 
+.grid-item {
+	position: relative;
+	overflow: hidden;
+}
 .grid-item img {
 	width: 100%;
 	height: auto;
 	margin: 1em;
 	opacity: 1;
 	transition: all 0.3s;
-	position: relative;
-	overflow: hidden;
+	vertical-align: top;
+	max-width: 100%;
 }
 
 .grid-item img:hover {
-	opacity: .9;
+	opacity: .85;
 	transform: scale(1.1);
 }
 
