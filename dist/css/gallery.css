@@ -2,6 +2,7 @@
 /* 	width: 80%; */
 	column-count: 4;
 	margin: 0 auto;	
+	padding-bottom: 5rem;
 }
 
 .grid-item img {
