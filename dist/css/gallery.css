@@ -18,6 +18,9 @@
 	transition: all 0.3s;
 	vertical-align: top;
 	max-width: 100%;
+	position: absolute;
+ top: 0;
+ left: 0;
 }
 
 .grid-item:hover img {
