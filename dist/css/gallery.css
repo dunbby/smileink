@@ -7,6 +7,7 @@
 .grid-item {
 	position: relative;
 	overflow: hidden;
+	width: 100%;
 }
 
 .grid-item img {
