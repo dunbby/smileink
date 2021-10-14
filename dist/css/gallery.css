@@ -13,6 +13,7 @@
 
 .grid-item img:hover {
 	opacity: .9;
+	transform: scale(1.2);
 }
 
 
