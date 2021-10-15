@@ -1,4 +1,4 @@
-let world = document.getElementById("world");
+let world = document.getElementById("header");
 
 window.addEventListener('scroll', function(){
     var value = window.scrollY;
