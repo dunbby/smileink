@@ -103,27 +103,31 @@ img {
 
 // Main Nav
 #main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 9999;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+  padding: 1rem 0;
+
+  .container-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .logo {
     display: block;
   }
 
-  // top: 0;
-  // overflow: hidden;
-  // z-index: 9999;
-  // width: $website-width;
-  // background-color: transparent;
-  // transition: all 0.2s ease-in-out;
-
-  // &.scrolled {
-  //   background: rgba(0, 0, 0, 0.8);
-  //   transition: padding-top 0.5s, padding-bottom 0.5s;
-  //   padding: 0.7rem 0;
-  // }
+  &.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+    transition: padding 0.5s;
+    padding: 0.7rem 0;
+  }
 
   .nav {
     display: flex;
